@@ -223,11 +223,10 @@ public class AEXMLElement: NSObject {
         return count
     }
     
-    private func indentation(var count: Int) -> String {
+    private func indentation(count: Int) -> String {
         var indent = String()
-        while count > 0 {
-            indent += "\t"
-            count -= 1
+        if count >= 0 {
+            (0..<count).forEach({_ in indent += "\t"})
         }
         return indent
     }
